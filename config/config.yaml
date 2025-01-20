@@ -1,0 +1,17 @@
+prometheus:
+  url: "http://prometheus:9090"
+  time_window: "1h"
+  step: "60s"
+
+storage:
+  type: "local"
+  path: "data"
+
+model:
+  method: "isolation_forest"
+  contamination: 0.05
+  # Add any other hyperparameters
+
+reporting:
+  # Only Teams webhook is used
+  teams_webhook_url: ""

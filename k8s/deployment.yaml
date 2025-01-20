@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-agent-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus-agent
+  template:
+    metadata:
+      labels:
+        app: prometheus-agent
+    spec:
+      containers:
+        - name: prometheus-agent
+          image: your-registry/prometheus-agent:latest
+          imagePullPolicy: IfNotPresent
+          command: ["python", "src/main.py"]
+      restartPolicy: Always

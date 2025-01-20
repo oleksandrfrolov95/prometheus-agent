@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: prometheus-agent-cron
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: prometheus-agent
+              image: your-registry/prometheus-agent:latest
+              imagePullPolicy: IfNotPresent
+              command: ["python", "src/main.py"]
+          restartPolicy: OnFailure

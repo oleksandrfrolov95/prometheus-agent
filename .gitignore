@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.venv*/
+.env
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+# Data or model artifacts
+data/
+*.model
+*.joblib

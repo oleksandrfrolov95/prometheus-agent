@@ -1,0 +1,9 @@
+# Python dependencies for prometheus-agent
+prometheus-api-client
+pandas
+numpy
+scikit-learn
+pyod
+requests
+pyyaml
+joblib
